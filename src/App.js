@@ -1,10 +1,8 @@
-import Home from "./modules/presentation/pages/Home";
+import Router from './routes/routes';
 
 function App() {
   return (
-    <>
-    <Home/>
-    </>
+    <Router/>
   );
 }
 
