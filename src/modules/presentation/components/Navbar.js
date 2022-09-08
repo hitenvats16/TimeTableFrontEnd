@@ -5,7 +5,7 @@ const Navbar = () => {
         <div className="w-full h-full grid grid-rows-1 grid-cols-8 mt-28">
             <div className="col-span-1"/>
             <div className="col-span-6 flex justify-center sm:justify-between items-center flex-wrap">
-                <span className="font-bold text-[36px] text-white custom-font text-[#111527]">{AppConstant.Title}</span>
+                <span className="font-bold text-[36px] custom-font text-[#111527]">{AppConstant.Title}</span>
                 <ButtonV1 label='Create Time Table' />
             </div>
             <div className="col-span-2"/>
