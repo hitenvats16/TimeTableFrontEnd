@@ -10,7 +10,7 @@ const SubjectCount = () => {
             arr.push(
                 <>
                     <p>Subject {i + 1}</p>
-                    <SubjectDetails index={i}/>
+                    <SubjectDetails index={i} />
                 </>
             )
         }
@@ -18,10 +18,10 @@ const SubjectCount = () => {
     }
 
     return (
-        <>
+        <div>
             <Dropdown fn={getInputFields} fields={['1', '2', '3', '4']} label='No. of Subjects' />
-            {array}
-        </>
+                {array}
+        </div>
     )
 }
 export default SubjectCount
