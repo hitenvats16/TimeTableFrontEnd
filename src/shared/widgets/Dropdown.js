@@ -3,23 +3,10 @@ import Select from 'react-select'
 
 
 const Dropdown = (props) => {
-    const { fields,fn } = props;
-    // const [array, setArray] = useState([])
-    // useEffect(() => {
-    //     const arr = fields.map((field) => {
-    //         return ({
-    //             label: field,
-    //             value: field,
-    //         })
-    //     })
-    //     setArray([
-    //         <option value="default" disabled hidden>
-    //             {label}
-    //         </option>
-    //     ])
-    // }, [])
+    const { fields, fn, label } = props;
     return (
-        <div className="w-72 m-2">
+        <div className=" flex items-center w-72 m-2">
+            <p className='pr-2'>{label}:</p>
             <Select onChange={(obj) => {
                 fn(obj.value)
             }} options={
