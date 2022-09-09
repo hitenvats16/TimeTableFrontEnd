@@ -4,3 +4,7 @@
 .custom-font{
     font-family: 'Poppins', sans-serif;
 }
+table, th, td {
+    border: 1px solid;
+    width: 100px;
+  }
