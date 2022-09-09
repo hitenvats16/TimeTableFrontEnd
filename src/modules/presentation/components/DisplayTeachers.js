@@ -1,34 +1,3 @@
-// import { API_CLIENT } from "../../../shared/services/api-client";
-// import { useEffect, useState } from "react";
-// import Select from 'react-select'
-// const DisplayTeachers = () => {
-
-//     const [teachers, setTeachers] = useState([]);
-//     useEffect(() => {
-//         const promise = API_CLIENT.get(process.env.REACT_APP_SUBJECT_URL);
-//         promise.then(result => {
-//             console.log(result);
-//             setTeachers(result.data.Data)
-//         }).catch(err => console.log('Network Err ', err));
-//     }, []);
-//     return (
-//         <div className="w-72 m-2">
-
-//             <Select onChange={(obj) => {
-//                 console.log(obj.value)
-//             }} options={
-//                 teachers.map((teacher) => {
-//                     return ({
-//                         label: teacher.Name,
-//                         value: teacher,
-//                     })
-//                 })
-//             } />
-//         </div>
-//     )
-// }
-
-// export default DisplayTeachers;
 import { API_CLIENT } from "../../../shared/services/api-client";
 import { useEffect, useState } from "react";
 import CreatableSelect from 'react-select/creatable';
@@ -36,7 +5,7 @@ import CreatableSelect from 'react-select/creatable';
 const DisplayTeachers = ({fn}) => {
     const [teachers, setTeachers] = useState([]);
     useEffect(() => {
-        const promise = API_CLIENT.get(process.env.REACT_APP_TEACHER_URL);
+        const promise = API_CLIENT.get("http://65.2.140.173:5000/teachers");
         promise.then(result => {
             console.log(result);
             setTeachers(result.data.Data)

@@ -3,13 +3,11 @@ import Select from 'react-select'
 
 
 const Dropdown = (props) => {
-    const { fields, fn, label } = props;
+    const { fields, label } = props;
     return (
         <div className=" flex items-center w-72 m-2">
             <p className='pr-2'>{label}:</p>
-            <Select onChange={(obj) => {
-                fn(obj.value)
-            }} options={
+            <Select options={
                 fields.map((field) => {
                     return ({
                         label: field,

@@ -1,12 +1,12 @@
 import { Alert } from "@material-tailwind/react";
-import { forwardRef, useState } from "react";
+import { useState } from "react";
 import { API_CLIENT } from "../../../shared/services/api-client";
 import ButtonV1 from "../../../shared/widgets/ButtonV1";
 import ButtonV2 from "../../../shared/widgets/ButtonV2";
 import InputBox from "../../../shared/widgets/InputBox";
 
-const ADD_TEACHERS_LINK = process.env.REACT_APP_ADD_TEACHERS_URL;
-const ADD_SUBJECTS_LINK = process.env.REACT_APP_ADD_SUBJECTS_URL;
+const ADD_TEACHERS_LINK = "http://65.2.140.173:5000/add_teachers";
+const ADD_SUBJECTS_LINK = "http://65.2.140.173:5000/add_subjects";
 
 const NavBar = ({title}) => {
     return (

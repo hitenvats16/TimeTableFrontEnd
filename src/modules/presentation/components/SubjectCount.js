@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { API_CLIENT } from "../../../shared/services/api-client";
 import ButtonV1 from "../../../shared/widgets/ButtonV1";
-import Dropdown from "../../../shared/widgets/Dropdown"
 import SubjectDetails from "./SubjectDetails";
 import { useNavigate } from 'react-router-dom'
 
@@ -23,7 +22,8 @@ function ShowDetails(props) {
     )
 }
 
-const SubjectCount = () => {
+const SubjectCount = (props) => {
+    const {slotCount}=props;
     const [load, setLoad] = useState([]);
     const navigate = useNavigate();
     function getInput(subject, teachers, rank) {
@@ -37,12 +37,18 @@ const SubjectCount = () => {
     }
 
     function sendDataToServer() {
+        load.sort((o1,o2)=>{
+            if(o1.Rank<o2.Rank) return 1;
+            if(o1.Rank>o2.Rank) return -1;
+            return 0;
+        })
+        console.dir(load);
         let packet = {
             load,
             no_of_slots: 6,
-            no_of_tt: 5,
+            no_of_tt: slotCount(),
         }
-        API_CLIENT.post(process.env.REACT_APP_LOGIC_URL, packet).then((data) => {
+        API_CLIENT.post("http://65.2.140.173:5000/generate", packet).then((data) => {
             console.log(data.data.result);
             navigate('/time-table',{
                 state:{

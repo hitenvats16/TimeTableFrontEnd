@@ -5,7 +5,7 @@ import Select from 'react-select'
 const DisplaySubjects = ({fn}) => {
     const [subjects, setSubjects] = useState([]);
     useEffect(() => {
-        const promise = API_CLIENT.get(process.env.REACT_APP_SUBJECT_URL);
+        const promise = API_CLIENT.get("http://65.2.140.173:5000/subjects");
         promise.then(result => {
             setSubjects(result.data.Data)
         }).catch(err => console.log('Network Err ', err));
