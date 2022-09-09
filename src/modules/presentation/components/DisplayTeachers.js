@@ -33,23 +33,22 @@ import { API_CLIENT } from "../../../shared/services/api-client";
 import { useEffect, useState } from "react";
 import CreatableSelect from 'react-select/creatable';
 
-const DisplayTeachers = () => {
+const DisplayTeachers = ({fn}) => {
     const [teachers, setTeachers] = useState([]);
     useEffect(() => {
-        const promise = API_CLIENT.get(process.env.REACT_APP_SUBJECT_URL);
+        const promise = API_CLIENT.get(process.env.REACT_APP_TEACHER_URL);
         promise.then(result => {
             console.log(result);
             setTeachers(result.data.Data)
         }).catch(err => console.log('Network Err ', err));
     }, []);
 
-
     const handleChange = (
-        newValue,
-        actionMeta
+        newValue
     ) => {
-        console.log(newValue);
+        fn(newValue);
     };
+    
     return (
        <div className="w-72 m-2">
          <CreatableSelect
