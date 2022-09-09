@@ -4,7 +4,7 @@ const InputBox = (props) => {
   const { label, fn, ref, val } = props;
   return (
     <div className="w-72 m-2">
-      <Input ref={ref} onChange={(obj)=>fn(obj.target.value)} label={label} value={val}/>
+      <Input type={'number'} ref={ref} onChange={(obj)=>fn(obj.target.value)} label={label} value={val}/>
     </div>
   );
 }
