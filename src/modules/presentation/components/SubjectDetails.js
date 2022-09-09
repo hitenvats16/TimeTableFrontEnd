@@ -10,7 +10,7 @@ const SubjectDetails = ({ fn }) => {
     const [subject, setSubject] = useState([]);
 
     const getPriority = (val) => {
-        SetRank(val);
+        SetRank(parseInt(val));
     }
 
     function getTeachersArray(arr) {
